@@ -1,22 +1,24 @@
 import { nanoid } from 'nanoid';
 
+import Loader from './Loader';
 import ShowCard from '../ShowCard';
 import { useFetch } from '../../hooks';
+import { ListContainer } from './style';
 import { Params, Response } from '../../interfaces';
 
 const ShowList = ({ lang }: Params) => {
   const { data, loading, error }: Response = useFetch(lang);
 
-  if (loading) return <p>Cargando data...</p>;
+  if (loading) return <Loader />;
 
   if (error) return <p>Ha ocurrido un error</p>;
 
   return (
-    <div>
+    <ListContainer>
       {data.results?.map((show) => (
         <ShowCard key={nanoid()} show={show} />
       ))}
-    </div>
+    </ListContainer>
   );
 };
 
