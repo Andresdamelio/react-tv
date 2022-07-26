@@ -14,7 +14,7 @@ const ShowList = ({ lang }: Params) => {
   if (error) return <p>Ha ocurrido un error</p>;
 
   return (
-    <Container>
+    <Container data-testid='list-tv'>
       {data.results?.map((show) => (
         <ShowCard key={nanoid()} show={show} />
       ))}
