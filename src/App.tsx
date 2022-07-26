@@ -1,12 +1,5 @@
-import ShowList from './components/ShowList';
-
 const App = () => {
-  return (
-    <div>
-      Microfrontend 2
-      <ShowList />
-    </div>
-  );
+  return <div>Microfrontend 2</div>;
 };
 
 export default App;

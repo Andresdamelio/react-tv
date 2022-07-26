@@ -8,10 +8,12 @@ const webpackConfig = require(webpackConfigPath);
 const override = (config) => {
   config.plugins.push(
     new ModuleFederationPlugin({
-      name: 'movies',
+      name: 'tv',
       filename: 'remoteEntry.js',
       remotes: {},
-      exposes: {},
+      exposes: {
+        './ShowList': './src/components/ShowList'
+      },
       shared: {
         ...deps,
         react: { singleton: true, eager: true, requiredVersion: deps.react },
