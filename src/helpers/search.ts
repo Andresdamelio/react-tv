@@ -9,7 +9,7 @@ export const search = async (lang: string = 'es') => {
       }
     });
 
-    return result.data;
+    return result.data as Response;
   } catch (error) {
     return error;
   }
