@@ -3,13 +3,13 @@ import { Shows } from '../interfaces';
 
 export const search = async (lang: string = 'es') => {
   try {
-    const data = await api.get<Shows>('/tv/popular', {
+    const result = await api.get<Shows>('/tv/popular', {
       params: {
         language: lang
       }
     });
 
-    return data;
+    return result.data;
   } catch (error) {
     return error;
   }
